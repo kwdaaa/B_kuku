@@ -11,3 +11,4 @@ for first_number in range(1, input_line + 1):
 
         print(f"{second_number} × {first_number} = {result.rjust(2)} |", end=" ")
     print()
+   
