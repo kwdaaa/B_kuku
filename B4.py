@@ -14,28 +14,41 @@ def main():
     ]
 
     # Q1. 全国の平均気温を計算してください(9.5となればOK)
-
-    # 「weather_information」配列の中のキー「temperature」を持った値を取り出す
-    get_temperature_information = [temperature.get('temperature') for temperature in weather_information]
-    print(get_temperature_information)
+    # 配列「weather_information」の中からキー「'temperature'」のバリューを取り出す。
+    get_japan_temperature = [temperature.get('temperature') for temperature in weather_information]
+    # print(get_japan_temperature)
 
     # 配列の要素数を数える
     count = len(weather_information)
-    print(count)
+    # print(count)
 
-    # 「get_weather_information」配列の和を配列の要素数で割る
-    print(sum(get_temperature_information) / count)
+    # # 配列「weather_information」の和を配列の要素数で割る
+    print(sum(get_japan_temperature) / count)
 
     # Q2. 大阪府のすべての駅名をカンマ区切りで出力してください( '梅田,大阪,堺' となればOK)
-    # prefecture = list.sort(weather_information, key='prefecture', values='大阪府')
-    # print(prefecture)
-    for x in weather_information:
-        print(x)
-        if (prefecture.get('prefecture') for prefecture in weather_information) == '大阪府':
-            get_station_information = [station.get('station') for station in weather_information]
-            return get_station_information
+    # 配列「oosaka」にキー「'prefecture'」が「'大阪府'」のものだけ取り出す。
+    oosaka = [x for x in weather_information if x['prefecture'] == '大阪府']
+    # print(oosaka)
+
+    # 配列「oosaka」の中からキー「'station'」のバリューを取り出す。
+    get_oosaka_station = [station.get('station') for station in oosaka]
+    print(get_oosaka_station)
 
     # Q3. 福岡県の平均気温を計算してください(14.0となればOK)
+    # 配列「fukuoka」にキー「'prefecture'」が「'福岡県'」のものだけ取り出す。
+    fukuoka = [x for x in weather_information if x['prefecture'] == '福岡県']
+    # print(fukuoka)
+
+    # 配列「fukuoka」の中からキー「'temperature'」のバリューを取り出す。
+    get_fukuoka_temperature = [temperature.get('temperature') for temperature in fukuoka]
+    # print(get_fukuoka_temperature)
+
+    # 配列の要素数を数える
+    count = len(get_fukuoka_temperature)
+    # print(count)
+
+    # 配列「get_fukuoka_temperature」の和を配列の要素数で割る
+    print(sum(get_fukuoka_temperature) / count)
 
 
 if __name__ == '__main__':
