@@ -7,6 +7,7 @@ input_column = int(input_column)
 for first_number in range(1, input_line + 1):
 
     for second_number in range(1, input_column + 1):
-        result = first_number * second_number
-        print(f"{second_number} × {first_number} = {result} |", end=" ")
+        result = str(first_number * second_number)
+
+        print(f"{second_number} × {first_number} = {result.rjust(2)} |", end=" ")
     print()
