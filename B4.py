@@ -1,5 +1,6 @@
 def main():
-    # 3都府県のいくつかの駅名とある日の最高気温(単位: ℃)のデータを辞書として持っています
+    # 変数「weather_information」というリストの中に辞書を定義。
+    # キーは、'prefecture'、'station'、'temperature'の３つ。
     weather_information = [
         {'prefecture': '東京都', 'station': '渋谷', 'temperature': 6.5},
         {'prefecture': '東京都', 'station': '池袋', 'temperature': 7.0},
@@ -15,14 +16,15 @@ def main():
 
     # Q1. 全国の平均気温を計算してください(9.5となればOK)
     # 配列「weather_information」の中からキー「'temperature'」のバリューを取り出す。
-    get_japan_temperature = [temperature.get('temperature') for temperature in weather_information]
+    # 上記を変数「get_japan_temperature」を定義。
+    # 全部の要素に繰り返すからfor文を使う。
+    get_japan_temperature = [x.get('temperature') for x in weather_information]
     # print(get_japan_temperature)
-
-    # 配列の要素数を数える
+    # 配列の要素数を数える。
     count = len(weather_information)
     # print(count)
 
-    # # 配列「weather_information」の和を配列の要素数で割る
+    # # 配列「weather_information」の和を配列の要素数「count」で割る
     print(sum(get_japan_temperature) / count)
 
     # Q2. 大阪府のすべての駅名をカンマ区切りで出力してください( '梅田,大阪,堺' となればOK)
@@ -31,7 +33,7 @@ def main():
     # print(oosaka)
 
     # 配列「oosaka」の中からキー「'station'」のバリューを取り出す。
-    get_oosaka_station = [station.get('station') for station in oosaka]
+    get_oosaka_station = [x.get('station') for x in oosaka]
     print(get_oosaka_station)
 
     # Q3. 福岡県の平均気温を計算してください(14.0となればOK)
