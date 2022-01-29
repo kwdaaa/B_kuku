@@ -1,7 +1,7 @@
 # 入力された値をint型に変換して配列「numbers」に定義。
 # 関数「split()」でスペースで入力された文字を一つ一つ要素として取り出して配列に入れる。
 numbers = [int(x) for x in input("データを入力してください(スペース区切り) >").split()]
-
+print(numbers)
 # 合計値
 # 変数「add」を定義し、初期値を0とする。
 add = 0
@@ -39,3 +39,8 @@ print(f"最小値: {min}")
 average = int(add / len(numbers))
 # 変数「average」を出力する。
 print(f"平均値: {average}")
+
+# 配列の中身を１つずつ取り出す。
+list_ = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(list_)
+print(*list_)

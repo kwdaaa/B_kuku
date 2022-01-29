@@ -13,3 +13,14 @@ for line in range(1, input_line + 1):
         print(f"{column} × {line} = {result.rjust(2)} |", end=" ")
     # 改行を出力。
     print()
+
+# '100'と出力される。
+print("100".rjust(2))
+# '100'と出力される。
+print(f"{100:2d}")
+# ' 1'と出力される。
+print(f"{1:2d}")
+
+# '3'と出力される。3桁だから。
+n = len(f"{10 * 10}")
+print(n)

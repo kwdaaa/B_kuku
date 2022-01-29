@@ -21,13 +21,13 @@ def main():
     get_japan_temperature = [x.get('temperature') for x in weather_information]
     # print(get_japan_temperature)
     # 配列の要素数を数える。
-    count = len(weather_information)
+    count = len(get_japan_temperature)
     # print(count)
 
     # # 配列「weather_information」の和を配列の要素数「count」で割る
     print(sum(get_japan_temperature) / count)
 
-    # Q2. 大阪府のすべての駅名をカンマ区切りで出力してください( '梅田,大阪,堺' となればOK)
+    # Q2. 大阪府のすべての駅名をカンマ区切り で出力してください( '梅田,大阪,堺' となればOK)
     # 配列「oosaka」にキー「'prefecture'」が「'大阪府'」のものだけ取り出す。
     oosaka = [x for x in weather_information if x['prefecture'] == '大阪府']
     # print(oosaka)
